@@ -24,32 +24,6 @@ public class Main {
 		frame.setLocation(screen.width / 2 - frameWidth / 2, screen.height / 2 - frameHeigh / 2);
 		frame.setResizable(false);
 		frame.setLayout(null);
-
-//		Scanner scan = new Scanner(System.in);
-//		System.out.println("숫자를 입력하세요");
-//		String input = scan.nextLine();
-//		int num1 = Integer.parseInt(input);
-//		System.out.println("부호를 입력하세요");
-//		String input2 = scan.nextLine();
-//
-//		System.out.println("숫자를 입력하세요");
-//		String input3 = scan.nextLine();
-//		int num2 = Integer.parseInt(input3);
-//		int result = 0;
-//
-//		if (input2.equals("+")) {
-//			result = num1 + num2;
-//		} else if (input2.equals("-")) {
-//			result = num1 - num2;
-//		} else if (input2.equals("/")) {
-//			result = num1 / num2;
-//		} else if (input2.equals("*")) {
-//			result = num1 * num2;
-//		} else {
-//			System.out.println("잘못된 계산입니다.");
-//		}
-//		System.out.println("연산 결과 : " + result);
-
 		ArrayList<String> numArr = new ArrayList<>();
 
 		JLabel numDis = new JLabel("0");
@@ -97,40 +71,136 @@ public class Main {
 		num3Btn.setSize(70, 70);
 		frame.add(num3Btn);
 
+		num3Btn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String numStr = "";
+				numArr.add("3");
+				for (int i = 0; i < numArr.size(); i++) {
+					numStr += numArr.get(i);
+				}
+				numDis.setText(numStr);
+			}
+		});
+
 		JButton num4Btn = new JButton("4");
 		num4Btn.setLocation(50, 250);
 		num4Btn.setSize(70, 70);
 		frame.add(num4Btn);
+
+		num4Btn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String numStr = "";
+				numArr.add("4");
+				for (int i = 0; i < numArr.size(); i++) {
+					numStr += numArr.get(i);
+				}
+				numDis.setText(numStr);
+			}
+		});
 
 		JButton num5Btn = new JButton("5");
 		num5Btn.setLocation(120, 250);
 		num5Btn.setSize(70, 70);
 		frame.add(num5Btn);
 
+		num5Btn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String numStr = "";
+				numArr.add("5");
+				for (int i = 0; i < numArr.size(); i++) {
+					numStr += numArr.get(i);
+				}
+				numDis.setText(numStr);
+			}
+		});
+
 		JButton num6Btn = new JButton("6");
 		num6Btn.setLocation(190, 250);
 		num6Btn.setSize(70, 70);
 		frame.add(num6Btn);
+
+		num6Btn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String numStr = "";
+				numArr.add("6");
+				for (int i = 0; i < numArr.size(); i++) {
+					numStr += numArr.get(i);
+				}
+				numDis.setText(numStr);
+			}
+		});
 
 		JButton num7Btn = new JButton("7");
 		num7Btn.setLocation(50, 320);
 		num7Btn.setSize(70, 70);
 		frame.add(num7Btn);
 
+		num7Btn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String numStr = "";
+				numArr.add("7");
+				for (int i = 0; i < numArr.size(); i++) {
+					numStr += numArr.get(i);
+				}
+				numDis.setText(numStr);
+			}
+		});
+
 		JButton num8Btn = new JButton("8");
 		num8Btn.setLocation(120, 320);
 		num8Btn.setSize(70, 70);
 		frame.add(num8Btn);
+
+		num8Btn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String numStr = "";
+				numArr.add("8");
+				for (int i = 0; i < numArr.size(); i++) {
+					numStr += numArr.get(i);
+				}
+				numDis.setText(numStr);
+			}
+		});
 
 		JButton num9Btn = new JButton("9");
 		num9Btn.setLocation(190, 320);
 		num9Btn.setSize(70, 70);
 		frame.add(num9Btn);
 
+		num9Btn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String numStr = "";
+				numArr.add("9");
+				for (int i = 0; i < numArr.size(); i++) {
+					numStr += numArr.get(i);
+				}
+				numDis.setText(numStr);
+			}
+		});
+
 		JButton num0Btn = new JButton("0");
 		num0Btn.setLocation(50, 390);
 		num0Btn.setSize(210, 70);
 		frame.add(num0Btn);
+
+		num0Btn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String numStr = "";
+				numArr.add("0");
+				for (int i = 0; i < numArr.size(); i++) {
+					numStr += numArr.get(i);
+				}
+				numDis.setText(numStr);
+			}
+		});
 
 		JButton plusBtn = new JButton("+");
 		plusBtn.setLocation(270, 180);

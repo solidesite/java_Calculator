@@ -17,7 +17,21 @@ public class Control {
 	Frame frame = new Frame("frame");
 	ArrayList<String> numArr = new ArrayList<>();
 
+	String totalNum = "";
+	String markStr = "";
+	
+	public void numDisplay(String num) {
+		String numStr = "";
+		numArr.add(num);
+		for (int i = 0; i < numArr.size(); i++) {
+			numStr += numArr.get(i);
+		}
+		totalNum = numStr;
+	}
+
 	public void init() {
+		
+
 		int frameWidth = 500;
 		int frameHeigh = 700;
 		frame.setSize(frameWidth, frameHeigh);
@@ -39,12 +53,8 @@ public class Control {
 		num1Btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("1");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				numDisplay("1");
+				numDis.setText(totalNum);
 			}
 		});
 
@@ -56,12 +66,8 @@ public class Control {
 		num2Btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("2");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				numDisplay("2");
+				numDis.setText(totalNum);
 			}
 		});
 
@@ -73,12 +79,8 @@ public class Control {
 		num3Btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("3");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				numDisplay("3");
+				numDis.setText(totalNum);
 			}
 		});
 
@@ -90,12 +92,8 @@ public class Control {
 		num4Btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("4");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				numDisplay("4");
+				numDis.setText(totalNum);
 			}
 		});
 
@@ -107,12 +105,8 @@ public class Control {
 		num5Btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("5");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				numDisplay("5");
+				numDis.setText(totalNum);
 			}
 		});
 
@@ -124,12 +118,8 @@ public class Control {
 		num6Btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("6");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				numDisplay("6");
+				numDis.setText(totalNum);
 			}
 		});
 
@@ -141,12 +131,8 @@ public class Control {
 		num7Btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("7");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				numDisplay("7");
+				numDis.setText(totalNum);
 			}
 		});
 
@@ -158,12 +144,8 @@ public class Control {
 		num8Btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("8");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				numDisplay("8");
+				numDis.setText(totalNum);
 			}
 		});
 
@@ -175,12 +157,8 @@ public class Control {
 		num9Btn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("9");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				numDisplay("9");
+				numDis.setText(totalNum);
 			}
 		});
 
@@ -193,14 +171,9 @@ public class Control {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (numArr.size() == 0) {
-
 				} else {
-					String numStr = "";
-					numArr.add("0");
-					for (int i = 0; i < numArr.size(); i++) {
-						numStr += numArr.get(i);
-					}
-					numDis.setText(numStr);
+					numDisplay("0");
+					numDis.setText(totalNum);
 				}
 			}
 		});
@@ -213,12 +186,8 @@ public class Control {
 		plusBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("+");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				markStr = "+";
+				numDis.setText(totalNum + markStr);
 			}
 		});
 
@@ -230,12 +199,8 @@ public class Control {
 		minusBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("-");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				markStr = "-";
+				numDis.setText(totalNum + markStr);
 			}
 		});
 
@@ -247,12 +212,8 @@ public class Control {
 		divBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("¡À");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				markStr = "¡À";
+				numDis.setText(totalNum + markStr);
 			}
 		});
 
@@ -264,12 +225,8 @@ public class Control {
 		multiBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String numStr = "";
-				numArr.add("x");
-				for (int i = 0; i < numArr.size(); i++) {
-					numStr += numArr.get(i);
-				}
-				numDis.setText(numStr);
+				markStr = "x";
+				numDis.setText(totalNum + markStr);
 			}
 		});
 

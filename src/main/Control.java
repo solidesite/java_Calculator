@@ -246,6 +246,32 @@ public class Control {
 		resultBtn.setLocation(190, 470);
 		resultBtn.setSize(260, 70);
 		frame.add(resultBtn);
+		
+		resultBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int calc;
+				int result1 = Integer.parseInt(totalNum);
+				int result2 = Integer.parseInt(totalNum2);
+				if (markStr.equals("+")) {
+					calc = result1 + result2;
+					String calcStr = Integer.toString(calc);
+					numDis.setText(calcStr);
+				} else if (markStr.equals("-")) {
+					calc = result1 - result2;
+					String calcStr = Integer.toString(calc);
+					numDis.setText(calcStr);
+				} else if (markStr.equals("¡À")) {
+					calc = result1 / result2;
+					String calcStr = Integer.toString(calc);
+					numDis.setText(calcStr);
+				} else if (markStr.equals("x")) {
+					calc = result1 * result2;
+					String calcStr = Integer.toString(calc);
+					numDis.setText(calcStr);
+				}
+			}
+		});
 
 		JButton deleteBtn = new JButton("<-");
 		deleteBtn.setLocation(190, 540);

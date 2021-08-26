@@ -16,17 +16,29 @@ public class Control {
 	Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
 	Frame frame = new Frame("frame");
 	ArrayList<String> numArr = new ArrayList<>();
+	ArrayList<String> numArr2 = new ArrayList<>();
 
 	String totalNum = "";
+	String totalNum2 = "";
 	String markStr = "";
 	
 	public void numDisplay(String num) {
-		String numStr = "";
-		numArr.add(num);
-		for (int i = 0; i < numArr.size(); i++) {
-			numStr += numArr.get(i);
+		if (markStr == "" ) {
+			String numStr = "";
+			numArr.add(num);
+			for (int i = 0; i < numArr.size(); i++) {
+				numStr += numArr.get(i);
+			}
+			totalNum = numStr;
+		} else {
+			String numStr = "";
+			numArr2.add(num);
+			for (int i = 0; i < numArr2.size(); i++) {
+				numStr += numArr2.get(i);
+			}
+			totalNum2 = numStr;
 		}
-		totalNum = numStr;
+		
 	}
 
 	public void init() {
@@ -54,7 +66,7 @@ public class Control {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				numDisplay("1");
-				numDis.setText(totalNum);
+				numDis.setText(totalNum + markStr + totalNum2);
 			}
 		});
 
@@ -67,7 +79,7 @@ public class Control {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				numDisplay("2");
-				numDis.setText(totalNum);
+				numDis.setText(totalNum + markStr + totalNum2);
 			}
 		});
 
@@ -80,7 +92,7 @@ public class Control {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				numDisplay("3");
-				numDis.setText(totalNum);
+				numDis.setText(totalNum + markStr + totalNum2);
 			}
 		});
 
@@ -93,7 +105,7 @@ public class Control {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				numDisplay("4");
-				numDis.setText(totalNum);
+				numDis.setText(totalNum + markStr + totalNum2);
 			}
 		});
 
@@ -106,7 +118,7 @@ public class Control {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				numDisplay("5");
-				numDis.setText(totalNum);
+				numDis.setText(totalNum + markStr + totalNum2);
 			}
 		});
 
@@ -119,7 +131,7 @@ public class Control {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				numDisplay("6");
-				numDis.setText(totalNum);
+				numDis.setText(totalNum + markStr + totalNum2);
 			}
 		});
 
@@ -132,7 +144,7 @@ public class Control {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				numDisplay("7");
-				numDis.setText(totalNum);
+				numDis.setText(totalNum + markStr + totalNum2);
 			}
 		});
 
@@ -145,7 +157,7 @@ public class Control {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				numDisplay("8");
-				numDis.setText(totalNum);
+				numDis.setText(totalNum + markStr + totalNum2);
 			}
 		});
 
@@ -158,7 +170,7 @@ public class Control {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				numDisplay("9");
-				numDis.setText(totalNum);
+				numDis.setText(totalNum + markStr + totalNum2);
 			}
 		});
 
@@ -173,7 +185,7 @@ public class Control {
 				if (numArr.size() == 0) {
 				} else {
 					numDisplay("0");
-					numDis.setText(totalNum);
+					numDis.setText(totalNum + markStr + totalNum2);
 				}
 			}
 		});

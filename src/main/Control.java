@@ -38,7 +38,13 @@ public class Control {
 			}
 			totalNum2 = numStr;
 		}
-		
+	}
+	public void clear () {
+		numArr.clear();
+		numArr2.clear();
+		markStr = "";
+		totalNum = "";
+		totalNum2 = "";
 	}
 
 	public void init() {
@@ -270,6 +276,7 @@ public class Control {
 					String calcStr = Integer.toString(calc);
 					numDis.setText(calcStr);
 				}
+				clear();
 			}
 		});
 
@@ -282,6 +289,14 @@ public class Control {
 		clearBtn.setLocation(190, 610);
 		clearBtn.setSize(260, 70);
 		frame.add(clearBtn);
+		
+		clearBtn.addActionListener (new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				clear();
+				numDis.setText("0");
+			}
+		});
 
 		frame.setVisible(true);
 

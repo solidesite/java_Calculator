@@ -21,9 +21,9 @@ public class Control {
 	String totalNum = "";
 	String totalNum2 = "";
 	String markStr = "";
-	
+
 	public void numDisplay(String num) {
-		if (markStr == "" ) {
+		if (markStr == "") {
 			String numStr = "";
 			numArr.add(num);
 			for (int i = 0; i < numArr.size(); i++) {
@@ -39,7 +39,8 @@ public class Control {
 			totalNum2 = numStr;
 		}
 	}
-	public void clear () {
+
+	public void clear() {
 		numArr.clear();
 		numArr2.clear();
 		markStr = "";
@@ -48,7 +49,6 @@ public class Control {
 	}
 
 	public void init() {
-		
 
 		int frameWidth = 500;
 		int frameHeigh = 700;
@@ -252,7 +252,7 @@ public class Control {
 		resultBtn.setLocation(190, 470);
 		resultBtn.setSize(260, 70);
 		frame.add(resultBtn);
-		
+
 		resultBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -285,12 +285,39 @@ public class Control {
 		deleteBtn.setSize(260, 70);
 		frame.add(deleteBtn);
 
+		deleteBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				numArr.remove(numArr.size() - 1);
+				if (markStr == "") {
+					String numStr = "";
+					for (int i = 0; i < numArr.size(); i++) {
+						numStr += numArr.get(i);
+					}
+					totalNum = numStr;
+				} else if (markStr == "+" || markStr == "-" || markStr == "x" || markStr == "¡À") {
+					markStr = "";
+				} else {
+					String numStr = "";
+					for (int i = 0; i < numArr2.size(); i++) {
+						numStr += numArr2.get(i);
+					}
+					totalNum2 = numStr;
+				}
+				if (numArr.size() == 0) {
+					numDis.setText("0");
+				} else {
+					numDis.setText(totalNum + markStr + totalNum2);
+				}
+			}
+		});
+
 		JButton clearBtn = new JButton("clear all");
 		clearBtn.setLocation(190, 610);
 		clearBtn.setSize(260, 70);
 		frame.add(clearBtn);
-		
-		clearBtn.addActionListener (new ActionListener() {
+
+		clearBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				clear();

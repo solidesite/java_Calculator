@@ -263,20 +263,27 @@ public class Control {
 					calc = result1 + result2;
 					String calcStr = Integer.toString(calc);
 					numDis.setText(calcStr);
+					totalNum = calcStr;
 				} else if (markStr.equals("-")) {
 					calc = result1 - result2;
 					String calcStr = Integer.toString(calc);
 					numDis.setText(calcStr);
+					totalNum = calcStr;
 				} else if (markStr.equals("¡À")) {
 					calc = result1 / result2;
 					String calcStr = Integer.toString(calc);
 					numDis.setText(calcStr);
+					totalNum = calcStr;
 				} else if (markStr.equals("x")) {
 					calc = result1 * result2;
 					String calcStr = Integer.toString(calc);
 					numDis.setText(calcStr);
+					totalNum = calcStr;
 				}
-				clear();
+				numArr.clear();
+				numArr2.clear();
+				markStr = "";
+				totalNum2 = "";
 			}
 		});
 
@@ -288,8 +295,8 @@ public class Control {
 		deleteBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				numArr.remove(numArr.size() - 1);
-				if (markStr == "") {
+				if (markStr.equals("")) {
+					numArr.remove(numArr.size() - 1);
 					String numStr = "";
 					for (int i = 0; i < numArr.size(); i++) {
 						numStr += numArr.get(i);

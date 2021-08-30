@@ -295,21 +295,24 @@ public class Control {
 		deleteBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (markStr.equals("")) {
+				if (markStr == "") {
 					numArr.remove(numArr.size() - 1);
 					String numStr = "";
 					for (int i = 0; i < numArr.size(); i++) {
 						numStr += numArr.get(i);
 					}
 					totalNum = numStr;
-				} else if (markStr == "+" || markStr == "-" || markStr == "x" || markStr == "¡À") {
-					markStr = "";
-				} else {
-					String numStr = "";
-					for (int i = 0; i < numArr2.size(); i++) {
-						numStr += numArr2.get(i);
+				} else if (markStr != "") {
+					if (numArr2.size() != 0) {
+						numArr2.remove(numArr2.size() - 1);
+						String numStr = "";
+						for (int i = 0; i < numArr2.size(); i++) {
+							numStr += numArr2.get(i);
+						}
+						totalNum2 = numStr;
+					} else {
+						markStr = "";
 					}
-					totalNum2 = numStr;
 				}
 				if (numArr.size() == 0) {
 					numDis.setText("0");

@@ -185,16 +185,18 @@ public class Control {
 		num0Btn.setSize(210, 70);
 		frame.add(num0Btn);
 
-		num0Btn.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if (numArr.size() == 0) {
-				} else {
-					numDisplay("0");
-					numDis.setText(totalNum + markStr + totalNum2);
+		if (numArr2.size() != 0) {
+			num0Btn.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					if (numArr.size() == 0) {
+					} else {
+						numDisplay("0");
+						numDis.setText(totalNum + markStr + totalNum2);
+					}
 				}
-			}
-		});
+			});
+		}
 
 		JButton plusBtn = new JButton("+");
 		plusBtn.setLocation(270, 180);
